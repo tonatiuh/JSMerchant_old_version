@@ -4,13 +4,15 @@
   <tr>
     <th>Image URL</th>
     <th>Tittle</th>
-    <th>Description</th>
+    <th>Price</th>
+    <th>Stock</th>
   </tr>
   <% @products.each do |product| %>
     <tr>
       <td><%= image_tag "/images/products/#{product.image_url}" %></td>
       <td><span class="product_title"><%= link_to product.title, product_path(product) %></span><%= product.description %></td>
       <td><%= print_price(product.price) %></td>
+      <td><%= print_stock(product.stock).html_safe %></td>
     </tr>
   <% end %>
 </table>
