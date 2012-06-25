@@ -15,9 +15,9 @@ class OrderItemsController < ApplicationController
   end
 
   def create
-    @order_item = OrderItem.new(params[:order_item])
+    @order_item = @order.order_items.new(:quantity => 1, :product_id => params[:product_id])
     if @order_item.save
-      redirect_to @order_item, :notice => "Successfully created order item."
+      redirect_to @order, :notice => "Successfully created order item."
     else
       render :action => 'new'
     end
