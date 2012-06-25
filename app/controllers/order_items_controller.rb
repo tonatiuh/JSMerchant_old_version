@@ -1,4 +1,7 @@
 class OrderItemsController < ApplicationController
+
+  before_filter :load_order
+
   def index
     @order_items = OrderItem.all
   end
