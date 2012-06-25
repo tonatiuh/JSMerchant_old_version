@@ -1,1 +1,3 @@
 My result files after of taking the tutorial from #Jumpstartlab (http://tutorials.jumpstartlab.com/projects/jsmerchant.html) 
+
+(In progress)
