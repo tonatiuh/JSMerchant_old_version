@@ -14,6 +14,10 @@
     <td><%= @order.order_items.count %></td>
   </tr>
   <tr>
+    <th>Order Total:</th>
+    <td><%= print_price(@order.total) %></td>
+  </tr>
+  <tr>
     <th>Items</th>
     <th>Title</th>
     <th>Quantity</th>
@@ -25,7 +29,10 @@
       <td><%= image_tag "/images/products/#{item.product.image_url}" %></td>
       <td><%= item.product.title %></td>
       <td><%= item.quantity %></td>
+      <td><%= print_price(item.product.price) %></td>
       <td><%= print_price(item.subtotal) %></td>
+      <td><%= link_to "Destroy", order_item, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
     <% end %>
+  </tr>
   </table>
